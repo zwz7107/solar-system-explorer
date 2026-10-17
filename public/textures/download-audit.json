@@ -1,0 +1,252 @@
+{
+  "earth": {
+    "path": "/textures/earth.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 463087,
+    "sha256": "767ee1dc6eb3802699bfccf6f264880f8acd0b80de3191cd24984fe279b07b7c"
+  },
+  "venus": {
+    "path": "/textures/venus.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 229696,
+    "sha256": "225012ad4911730605c4e189ca2a3bf674fce50cc48aab4102b936b47d6991ac"
+  },
+  "sun": {
+    "path": "/textures/sun.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_sun.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 822427,
+    "sha256": "ff0f076ba65e03b5ab518451bc96699325be38e3ccbdd5869ee1c00f3a0c8816"
+  },
+  "mercury": {
+    "path": "/textures/mercury.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_mercury.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 872555,
+    "sha256": "5a5c80607f643496bac9a631e71957def35ed788895f18b678ac849c2b38e48a"
+  },
+  "jupiter": {
+    "path": "/textures/jupiter.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 498976,
+    "sha256": "b0f04d005350252636b0e3396fc592548cbd9e9126b269d32d5c6abd4b0e4f2b"
+  },
+  "mars": {
+    "path": "/textures/mars.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_mars.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 750547,
+    "sha256": "2d187f3e77a98eaa8cea5f4cc722f633c122ef170b9e94ace6b5fb6cbc3f8e01"
+  },
+  "uranus": {
+    "path": "/textures/uranus.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 77751,
+    "sha256": "d15239d46f82d3ea13d2b260b5b29b2a382f42f2916dae0694d0387b1204a09d"
+  },
+  "saturn": {
+    "path": "/textures/saturn.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_saturn.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 199916,
+    "sha256": "54a900ca9bf7ab62e70f862852759abdf342e6d6436a95a2fe9ebdb6bcd3bbac"
+  },
+  "neptune": {
+    "path": "/textures/neptune.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_neptune.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 241580,
+    "sha256": "cb42ea82709741d28b0af44d8b283cbc6dbd0c521a7f0e1e1e010ade00977df6"
+  },
+  "saturn_ring": {
+    "path": "/textures/saturn_ring.png",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+    "size": [
+      2048,
+      125
+    ],
+    "bytes": 12119,
+    "sha256": "4b0644b2f3ef259fd0bfaedd9dc52f9e7d9738f65f50363e8c4dd19f650d7334"
+  },
+  "earth_night": {
+    "path": "/textures/earth_night.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 255287,
+    "sha256": "c16fd1bc096ab91a5c5265c6ff9847c43f489f2e2ee790ccdbcbd03251cf3a5a"
+  },
+  "earth_clouds": {
+    "path": "/textures/earth_clouds.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 965676,
+    "sha256": "fffd7f68d41b37274822150e54a6ef605af1d3ec35624d9f628c3b896bfa42ed"
+  },
+  "moon": {
+    "path": "/textures/moon.jpg",
+    "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+    "size": [
+      2048,
+      1024
+    ],
+    "bytes": 457942,
+    "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170"
+  },
+  "deimos": {
+    "path": "/textures/deimos.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/mar2kuu2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 71976,
+    "sha256": "e8902c5b34e634c5146e5d8d2bf352bb5f45181c715ed15644edb5f009826ed6"
+  },
+  "phobos": {
+    "path": "/textures/phobos.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/mar1kuu2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 138689,
+    "sha256": "84eb21c08626a0558d1e88ccb666bd1e914606146423f9ebcf6c09953d7543af"
+  },
+  "io": {
+    "path": "/textures/io.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/jup1vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 113001,
+    "sha256": "71c574f74555552fa4bec70931e954c6139d3489df825c9edf40213d49cba132"
+  },
+  "callisto": {
+    "path": "/textures/callisto.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/jup4vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 216624,
+    "sha256": "9659f85b76d5cb90cb709b32f3282f3ca94199be4d8b3b159d7d373a1887551c"
+  },
+  "ganymede": {
+    "path": "/textures/ganymede.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/jup3vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 183557,
+    "sha256": "626302a877528d7eab74f4229f6c7249fffc91be8e28e8edc040433aca98cc6d"
+  },
+  "europa": {
+    "path": "/textures/europa.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/jup2vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 135970,
+    "sha256": "03164d293c46b3eff16678c20dfb73337db8a404e2d83f057bc320b95484b54f"
+  },
+  "iapetus": {
+    "path": "/textures/iapetus.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/sat8vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 64670,
+    "sha256": "3b5054f41e9cec5d220655260930c9d31a1ec44fa43b82f2d105f3ee4daac26b"
+  },
+  "titania": {
+    "path": "/textures/titania.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/ura3vuu2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 64502,
+    "sha256": "cde4432380f44d2cda56c0059ae8ad44b7029bc930aefadf2cbac91379dd41e7"
+  },
+  "enceladus": {
+    "path": "/textures/enceladus.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/sat2vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 101190,
+    "sha256": "224b4510a75dc6554cfb0802507f9f1bb959c52848b8ec9286d4253d417d6dd2"
+  },
+  "mimas": {
+    "path": "/textures/mimas.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/sat1vss2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 111227,
+    "sha256": "c854a36beffc806bf1b86700f427c37d19f20f74e8e6275be2b4568e6c175a39"
+  },
+  "triton": {
+    "path": "/textures/triton.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/nep1vuu2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 58050,
+    "sha256": "45f107996448c2236ede95624bfb672b56f0db843f084ed61a197454050b3214"
+  },
+  "miranda": {
+    "path": "/textures/miranda.jpg",
+    "url": "https://space.jpl.nasa.gov/tmaps/pix/ura5vuu2.jpg",
+    "size": [
+      1440,
+      720
+    ],
+    "bytes": 73419,
+    "sha256": "de6fab3acb9a68bcbe59b3ac0c5b985b63c5b5bf6b75b142f4749cb6eadfca36"
+  }
+}

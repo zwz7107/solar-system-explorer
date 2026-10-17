@@ -1,0 +1,33 @@
+import { chromium } from '@playwright/test';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import assert from 'node:assert/strict';
+const root=process.cwd(),dir=process.argv[2]?path.resolve(process.argv[2]):path.join(root,'outputs/portable/solar-system-explorer-offline-2026-09-19');
+const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-webgl','--ignore-gpu-blocklist']});
+const errors=[],failed=[],network=[];
+let result={passed:false};
+try{
+ const context=await browser.newContext({viewport:{width:1600,height:1000},deviceScaleFactor:1,offline:true});
+ const page=await context.newPage();
+ page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+ page.on('requestfailed',r=>failed.push(r.url()));page.on('request',r=>{if(/^https?:/i.test(r.url()))network.push(r.url());});
+ await page.goto(pathToFileURL(path.join(dir,'solar-system-explorer.html')).href,{waitUntil:'load'});
+ await page.waitForFunction(()=>window.__solarApp,{}, {timeout:30000});
+ assert.ok(await page.evaluate(()=>window.__solarApp.ready),JSON.stringify(errors));
+ const diagnostic=await page.evaluate(()=>window.__solarApp.getDiagnostics());assert.equal(diagnostic.bodies,23);assert.deepEqual(diagnostic.failures,[]);
+ await page.locator('#pause-button').click();
+ await page.locator('#scale-button').click();assert.equal(await page.evaluate(()=>window.__solarApp.getState().scale),'real');
+ await page.locator('[data-mode="size"]').click();await page.selectOption('#compare-a','earth');await page.selectOption('#compare-b','moon');assert.match(await page.locator('#comparison-content').textContent(),/3.67/);
+ await page.locator('[data-mode="distance"]').click();assert.equal(await page.locator('#compare-a option').count(),8);
+ await page.locator('[data-mode="explore"]').click();await page.locator('#body-nav [data-body="saturn"]').click();await page.waitForTimeout(1450);
+ await fs.mkdir(path.join(root,'outputs/qa/offline'),{recursive:true});await page.screenshot({path:path.join(root,'outputs/qa/offline/saturn-file.png')});
+ await page.locator('#help-button').click();
+ const popupPromise=context.waitForEvent('page');await page.locator('.credits-link a').click();const credits=await popupPromise;await credits.waitForLoadState('load');
+ assert.ok(credits.url().startsWith('file:'));assert.match(await credits.locator('body').textContent(),/Three|NASA|纹理/);
+ const returnLink=credits.locator('a[href="./solar-system-explorer.html"]').first();assert.equal(await returnLink.count(),1);
+ await returnLink.click();await credits.waitForFunction(()=>window.__solarApp?.ready);
+ assert.equal(errors.length,0);assert.equal(failed.length,0);assert.equal(network.length,0);
+ result={passed:true,protocol:'file:',browserOffline:true,embeddedTextures:25,bodies:23,checks:['File URL loads without server','No HTTP or HTTPS startup requests','Textures all loaded','Real scale toggle','Earth-Moon comparison','Distance comparison','Saturn close-up','Local credits and return link'],errors,failed,network};
+ console.log(JSON.stringify(result));
+}finally{await fs.writeFile(path.join(root,'outputs/portable/offline-validation.json'),JSON.stringify({...result,errors,failed,network},null,2));await browser.close();}

@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.playwright/
+outputs/qa/*.log
+
+# Local workspace documents, generated releases and independent Sites checkout
+/outputs/
+/inputs/
+/sites/
+/context.md
+/requirements.md
+/AGENTS.md
+/.codex/
+/.agents/
+/.aws/
+/.sites-runtime/
+
+# Local credentials and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log

@@ -1,0 +1,18 @@
+import { chromium } from '@playwright/test';
+import fs from 'node:fs/promises';
+const out='outputs/qa';
+await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-webgl','--ignore-gpu-blocklist']});
+const page=await browser.newPage({viewport:{width:1600,height:1000},deviceScaleFactor:1});
+const errors=[],warnings=[],failed=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('console',m=>{if(m.type()==='error')errors.push(m.text());if(m.type()==='warning')warnings.push(m.text());});
+page.on('requestfailed',r=>failed.push(r.url()+' '+r.failure()?.errorText));
+await page.goto('http://127.0.0.1:5173',{waitUntil:'networkidle'});
+await page.waitForFunction(()=>window.__solarApp,{}, {timeout:30000});
+await page.waitForTimeout(1800);
+await page.screenshot({path:out+'/earth.png'});
+const ready=await page.evaluate(()=>({ready:window.__solarApp.ready,...(window.__solarApp.ready?window.__solarApp.getDiagnostics():{error:window.__solarApp.error})}));
+await fs.writeFile(out+'/initial-check.json',JSON.stringify({ready,errors,warnings,failed},null,2));
+console.log(JSON.stringify({ready,errors:errors.slice(0,8),warnings:warnings.slice(0,3),failed}));
+await browser.close();
